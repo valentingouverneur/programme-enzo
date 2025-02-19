@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programme de course</title>
     <link rel="stylesheet" href="styles.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
@@ -26,7 +30,7 @@
         <div class="bg-purple-200 p-5 rounded-xl mt-6 shadow-lg">
             <h2 class="text-xl font-bold text-gray-900">Programme 10KM</h2>
             <p class="text-gray-700 font-semibold">Bloc 3 - Allure spécifique 10km</p>
-            <p class="text-gray-600 text-sm">Semaine 9/12</p>
+            <p class="text-gray-600 text-sm">Semaine 10/12</p>
         </div>
 
         <!--Programme-->
@@ -52,44 +56,49 @@
             </div>
 
             <!-- Séance 2 -->
-            <div class="bg-white p-4 rounded-lg shadow-md" x-data="{ open: false }">
+            <div class="bg-white p-6 rounded-lg border-2 border-grey-600" x-data="{ open: false }">
                 <!--Badge-->
-                <div class="flex items-center">
-                    <span class="bg-red-100 text-red-600  px-3 py-1 rounded-md">NE PAS RATER</span>
-                    <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-md">ROUTE</span>
+                <div class="flex items-center mb-2">
+                    <div class="pr-2">
+                        <span class="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-gray-500/10 ring-inset">ROUTE</span>
+                    </div>
+                    <div class="pr-2">
+                        <span class="inline-flex items-center rounded-md bg-red-100 px-2 py-1 text-xs font-medium text-red-600 ring-1 ring-red-600/10 ring-inset">NE PAS RATER</span>
+                    </div>
                 </div>
                 <!--Header Session-->
-                <div class="flex justify-between items-center">
+                <div class="flex justify-between items-center pb-3">
                     <div class="titre-header">
-                        <h2 class="text-lg font-semibold">Allure 10 km</h2>
+                        <h2 class="text-xl font-semibold poppins-regular-italic">Allure 10 km 🚀🔥</h2>
                         <div>
-                        <p>Séance 2/3 - Semaine 10</p>
+                        <p class="text-orange-500 text-sm font-semibold">Séance 2/3 - Semaine 10</p>
                         </div>
                     </div>
-                    <div class="badge-header flex">
-                        <div class="bg-red-100 text-red-600  px-3 py-1 rounded-md">
-                            <div>
-                                <p>9.6</p>
-                                <p>km</p>
-                            </div>
+                    <div class="badge-header flex flex-row space-x-2">
+                        <div class="w-12 h-12 rounded-xl bg-orange-500 px-2 py-2 text-xs font-medium text-red-600 ring-1 ring-red-600/10 ring-inset">
+                                <p class="text-white text-center">9.6</p>
+                                <p class="text-white text-center">km</p>
                         </div>
-                        <div class="bg-red-100 text-red-600  px-3 py-1 rounded-md">
-                            <div>
-                                <p>57</p>
-                                <p>min</p>
-                            </div>
+                        <div class="w-12 h-12 rounded-xl bg-orange-500 px-2 py-2 text-xs font-medium text-red-600 ring-1 ring-red-600/10 ring-inset">
+                            <p class="text-white text-center">58</p>
+                            <p class="text-white text-center">min</p>
+                         </div>
+                         <div class="w-12 h-12 rounded-xl bg-red-500 px-2 py-2 text-xs font-medium text-red-600 ring-1 ring-red-600/10 ring-inset">
+                            <p class="text-white text-center">diff.</p>
+                            <p class="text-white text-center">4</p>
                         </div>
-                        <div class="bg-red-100 text-red-600  px-3 py-1 rounded-md">
-                            <div>
-                                <p>diff.</p>
-                                <p>4</p>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
-                <div class="flex items-right">
-                    <button @click="open = !open" class="text-blue-500 font-medium">
-                        Voir la séance
+                <div class="text-gray-400 text-xs/5 font-normal pb-3">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum commodo facilisis nibh, a congue turpis lacinia at. Sed eget felis id quam tincidunt fermentum. Pellentesque vel quam nisl. Phasellus ligula risus, volutpat eu metus finibus, pulvinar tristique enim. Aliquam gravida, urna vel varius porta, libero mauris lacinia felis, sed consequat purus metus in nisi. Fusce pulvinar tortor et nisl hendrerit ultricies. Sed non eros risus. Donec eu justo sit amet sapien venenatis facilisis sit amet ac nisl. Duis sed euismod erat, eu efficitur felis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc aliquet sodales rutrum. Curabitur scelerisque quam eget nunc viverra pellentesque.</p>    
+                </div>
+                <div class="flex flex-row-reverse items-end">
+                    <button @click="open = !open" class="rounded-md bg-gray-50 px-3 py-2 text-sm font-medium text-gray-500 ring-1 ring-gray-500/10 ring-inset inline-flex">
+                        <span>Voir la séance</span>
+                        <svg class="mt-1 w-3 h-3 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                        </svg>                    
                     </button>
                 </div>
                 <!--Body session-->
