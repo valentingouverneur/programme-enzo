@@ -115,3 +115,9 @@ body{
   font-weight: 400;
   font-style: normal;
 }
+
+
+.flip {
+    display: inline-block;
+    transform: scaleX(-1);
+  }
