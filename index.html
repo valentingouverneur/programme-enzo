@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programme de course</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="bg-gray-100 p-4">
+        <!-- Header -->
+        <div class="flex flex-col items-center">
+            <div class="flex items-center space-x-3">
+                <!-- Photo de profil à gauche -->
+                <img src="ppenzo.png" alt="Profil" class="w-12 h-12 rounded-full self-start">
+            
+                <!-- Texte centré au milieu de l’écran -->
+                <p class="text-gray-700 text-sm text-center mt-2">
+                    Hey, <span class="font-semibold">Enzo ! 👋</span>
+                </p>
+                </div>
+        </div>
+
+        <!--Presentation-->
+        <div class="bg-purple-200 p-5 rounded-xl mt-6 shadow-lg">
+            <h2 class="text-xl font-bold text-gray-900">Programme 10KM</h2>
+            <p class="text-gray-700 font-semibold">Bloc 3 - Allure spécifique 10km</p>
+            <p class="text-gray-600 text-sm">Semaine 9/12</p>
+        </div>
+
+        <!--Programme-->
+        <div class="space-y-4 max-w-full sm:max-w-[1072px] mx-auto">
+
+            <!-- Séance 1 -->
+            <div class="bg-white p-4 rounded-lg shadow-md" x-data="{ open: false }">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-lg font-semibold">Séance 1 : footing</h2>
+                    <button @click="open = !open" class="text-blue-500 font-medium">
+                        Voir la séance
+                    </button>
+                </div>
+                <div>
+                    <span class="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-red-600 ring-1 ring-red-500/10 ring-inset">6.7km</span>
+                    <span class="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-red-600/10 ring-inset">40min</span>
+                </div>
+                <div x-show="open" class="mt-2 border-t pt-2">
+                    <p>🏃‍♂️ 10 km à rythme modéré</p>
+                    <p>💨 5 x 100m accélérations</p>
+                    <p>🧘‍♂️ Étirements</p>
+                </div>
+            </div>
+
+            <!-- Séance 2 -->
+            <div class="bg-white p-4 rounded-lg shadow-md" x-data="{ open: false }">
+                <!--Badge-->
+                <div class="flex items-center">
+                    <span class="bg-red-100 text-red-600  px-3 py-1 rounded-md">NE PAS RATER</span>
+                    <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-md">ROUTE</span>
+                </div>
+                <!--Header Session-->
+                <div class="flex justify-between items-center">
+                    <div class="titre-header">
+                        <h2 class="text-lg font-semibold">Allure 10 km</h2>
+                        <div>
+                        <p>Séance 2/3 - Semaine 10</p>
+                        </div>
+                    </div>
+                    <div class="badge-header flex">
+                        <div class="bg-red-100 text-red-600  px-3 py-1 rounded-md">
+                            <div>
+                                <p>9.6</p>
+                                <p>km</p>
+                            </div>
+                        </div>
+                        <div class="bg-red-100 text-red-600  px-3 py-1 rounded-md">
+                            <div>
+                                <p>57</p>
+                                <p>min</p>
+                            </div>
+                        </div>
+                        <div class="bg-red-100 text-red-600  px-3 py-1 rounded-md">
+                            <div>
+                                <p>diff.</p>
+                                <p>4</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-right">
+                    <button @click="open = !open" class="text-blue-500 font-medium">
+                        Voir la séance
+                    </button>
+                </div>
+                <!--Body session-->
+                <div x-show="open" class="mt-2 border-t pt-2">
+                    <p>⚡ 6 x 400m à 90% VMA</p>
+                    <p>🏃‍♂️ 1 min de récupération entre chaque</p>
+                    <p>🧘‍♂️ Étirements et retour au calme</p>
+                </div>
+            </div>
+
+            <!-- Séance 3 -->
+            <div class="bg-white p-4 rounded-lg shadow-md" x-data="{ open: false }">
+                <div class="flex justify-between items-center">
+                    <h2 class="text-lg font-semibold">Séance 3 : Sortie longue</h2>
+                    <button @click="open = !open" class="text-blue-500 font-medium">
+                        Voir la séance
+                    </button>
+                </div>
+                <div x-show="open" class="mt-2 border-t pt-2">
+                    <p>🏃‍♂️ 15 km à faible intensité</p>
+                    <p>⛰️ Inclure des montées</p>
+                    <p>💦 Hydratation et récupération</p>
+                </div>
+            </div>
+
+        </div>
+</body>
+</html>
