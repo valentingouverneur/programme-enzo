@@ -82,14 +82,22 @@
                 <!--Body session-->
                 <div x-show="open" class="mt-4 border-t pt-4">
                     <div class="">
-                        <div class="flex">
+                        <div class="flex relative pb-3">
                             <div class="w-1/12 px-6 hidden sm:block">
-                              <div class="w-7 h-7 flex items-center justify-center bg-blue-900 text-white font-semibold rounded-full mt-4">
-                                <p class="text-white">1</p>
+                                <div class="w-7 h-7 flex items-center justify-center bg-blue-900 text-white font-semibold rounded-full mt-4">
+                                  <p class="text-white">1</p>
+                                </div>
                               </div>
+                            <!-- Bloc icône visible sur mobile uniquement, sans margin-top -->
+                            <div class="w-7 h-7 flex items-center justify-center bg-blue-900 text-white font-semibold rounded-full absolute top-[-10px] right-0 sm:hidden mt-0">
+                              <p class="text-white">1</p>
                             </div>
+                          
                             <div class="w-full sm:w-11/12 px-3">
                               <div class="p-4 bg-gray-100 rounded-lg">
+                                <div class="block sm:hidden">
+                                  <!-- L'icône est déjà positionnée ici -->
+                                </div>
                                 <div class="bg-white flex flex-row w-full justify-between p-3 rounded-lg">
                                   <div class="width-auto">
                                     <p class="text-gray-400">
@@ -97,12 +105,13 @@
                                     </p>
                                   </div>
                                   <div class="width-auto">
-                                    <p class="text-orange-500 font-semibold">Allure EF</p>
+                                    <p class="text-orange-500 font-semibold text-sm">Allure EF</p>
                                   </div>
                                 </div>
                               </div>
                             </div>
                           </div>
+                          
                           
                     </div>
                 </div>
@@ -144,7 +153,7 @@
                     </div>
                 </div>
                 <div class="text-gray-400 text-xs/5 font-normal pb-3">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum commodo facilisis nibh, a congue turpis lacinia at. Sed eget felis id quam tincidunt fermentum. Pellentesque vel quam nisl. Phasellus ligula risus, volutpat eu metus finibus, pulvinar tristique enim. Aliquam gravida, urna vel varius porta, libero mauris lacinia felis, sed consequat purus metus in nisi. Fusce pulvinar tortor et nisl hendrerit ultricies. Sed non eros risus. Donec eu justo sit amet sapien venenatis facilisis sit amet ac nisl. Duis sed euismod erat, eu efficitur felis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc aliquet sodales rutrum. Curabitur scelerisque quam eget nunc viverra pellentesque.</p>    
+                    <p>Séance d'allure 10 km où tu vas enchaîner 2 répétitions de 15' à l'allure cible entrecoupées de 5' de footing lent pour récupérer.</p>    
                 </div>
                 <div class="flex flex-row-reverse items-end">
                     <button @click="open = !open" class="rounded-md bg-gray-50 px-3 py-2 text-sm font-medium text-gray-500 ring-1 ring-gray-500/10 ring-inset inline-flex">
@@ -155,10 +164,111 @@
                     </button>
                 </div>
                 <!--Body session-->
-                <div x-show="open" class="mt-2 border-t pt-2">
-                    <p>⚡ 6 x 400m à 90% VMA</p>
-                    <p>🏃‍♂️ 1 min de récupération entre chaque</p>
-                    <p>🧘‍♂️ Étirements et retour au calme</p>
+                <div x-show="open" class="mt-4 border-t pt-4">
+                    <div class="">
+                        <!--Partie 1-->
+                        <div class="flex relative pb-3">
+                            <div class="w-1/12 px-6 hidden sm:block">
+                                <div class="w-7 h-7 flex items-center justify-center bg-blue-900 text-white font-semibold rounded-full mt-4">
+                                  <p class="text-white">1</p>
+                                </div>
+                              </div>
+                            <!-- Bloc icône visible sur mobile uniquement, sans margin-top -->
+                            <div class="w-7 h-7 flex items-center justify-center bg-blue-900 text-white font-semibold rounded-full absolute top-[-10px] right-0 sm:hidden mt-0">
+                              <p class="text-white">1</p>
+                            </div>
+                          
+                            <div class="w-full sm:w-11/12 px-3">
+                              <div class="p-4 bg-gray-100 rounded-lg">
+                                <div class="block sm:hidden">
+                                  <!-- L'icône est déjà positionnée ici -->
+                                </div>
+                                <div class="bg-white flex flex-row w-full justify-between p-3 rounded-lg">
+                                  <div class="width-auto">
+                                    <p class="text-gray-400">
+                                      <span class="font-semibold text-black">45min</span> à <span class="font-semibold text-black">6:30 - 6:45</span> /km   
+                                    </p>
+                                  </div>
+                                  <div class="width-auto">
+                                    <p class="text-orange-500 font-semibold text-sm">Allure EF</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!--Partie 2-->
+                          <div class="flex relative pb-3">
+                            <div class="w-1/12 px-6 hidden sm:block">
+                                <div class="w-7 h-7 flex items-center justify-center bg-blue-900 text-white font-semibold rounded-full mt-4">
+                                  <p class="text-white">2</p>
+                                </div>
+                              </div>
+                            <!-- Bloc icône visible sur mobile uniquement, sans margin-top -->
+                            <div class="w-7 h-7 flex items-center justify-center bg-blue-900 text-white font-semibold rounded-full absolute top-[-10px] right-0 sm:hidden mt-0">
+                              <p class="text-white">2</p>
+                            </div>
+                          
+                            <div class="w-full sm:w-11/12 px-3">
+                              <div class="p-4 bg-gray-100 rounded-lg">
+                                <div class="block sm:hidden">
+                                  <!-- L'icône est déjà positionnée ici -->
+                                </div>
+                                <div class="bg-white flex flex-row w-full justify-between p-3 mb-3 rounded-lg">
+                                  <div class="width-auto">
+                                    <p class="text-gray-400">
+                                      <span class="font-semibold text-black">15min</span> à <span class="font-semibold text-black">5:40</span> /km   
+                                    </p>
+                                  </div>
+                                  <div class="width-auto">
+                                    <p class="text-orange-500 font-semibold text-sm">Allure 10km</p>
+                                  </div>
+                                </div>
+                                <div class="bg-white flex flex-row w-full justify-between p-3 rounded-lg">
+                                    <div class="width-auto">
+                                      <p class="text-gray-400">
+                                        <span class="font-semibold text-black">5min</span> à <span class="font-semibold text-black">6:40</span> /km   
+                                      </p>
+                                    </div>
+                                    <div class="width-auto">
+                                      <p class="text-orange-500 font-semibold text-sm">Allure EF</p>
+                                    </div>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          <!--Partie 3-->
+                          <div class="flex relative pb-3">
+                            <div class="w-1/12 px-6 hidden sm:block">
+                                <div class="w-7 h-7 flex items-center justify-center bg-blue-900 text-white font-semibold rounded-full mt-4">
+                                  <p class="text-white">3</p>
+                                </div>
+                              </div>
+                            <!-- Bloc icône visible sur mobile uniquement, sans margin-top -->
+                            <div class="w-7 h-7 flex items-center justify-center bg-blue-900 text-white font-semibold rounded-full absolute top-[-10px] right-0 sm:hidden mt-0">
+                              <p class="text-white">3</p>
+                            </div>
+                          
+                            <div class="w-full sm:w-11/12 px-3">
+                              <div class="p-4 bg-gray-100 rounded-lg">
+                                <div class="block sm:hidden">
+                                  <!-- L'icône est déjà positionnée ici -->
+                                </div>
+                                <div class="bg-white flex flex-row w-full justify-between p-3 rounded-lg">
+                                  <div class="width-auto">
+                                    <p class="text-gray-400">
+                                      <span class="font-semibold text-black">10</span> à <span class="font-semibold text-black">6:30 - 6:45</span> /km   
+                                    </p>
+                                  </div>
+                                  <div class="width-auto">
+                                    <p class="text-orange-500 font-semibold text-sm">Allure EF</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
                 </div>
             </div>
 
@@ -198,7 +308,7 @@
                     </div>
                 </div>
                 <div class="text-gray-400 text-xs/5 font-normal pb-3">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum commodo facilisis nibh, a congue turpis lacinia at. Sed eget felis id quam tincidunt fermentum. Pellentesque vel quam nisl. Phasellus ligula risus, volutpat eu metus finibus, pulvinar tristique enim. Aliquam gravida, urna vel varius porta, libero mauris lacinia felis, sed consequat purus metus in nisi. Fusce pulvinar tortor et nisl hendrerit ultricies. Sed non eros risus. Donec eu justo sit amet sapien venenatis facilisis sit amet ac nisl. Duis sed euismod erat, eu efficitur.</p>    
+                    <p>Sortie longue à courir 100% en endurance fondamentale, comme pour les footings.</p>    
                 </div>
                 <div class="flex flex-row-reverse items-end">
                     <button @click="open = !open" class="rounded-md bg-gray-50 px-3 py-2 text-sm font-medium text-gray-500 ring-1 ring-gray-500/10 ring-inset inline-flex">
@@ -209,10 +319,37 @@
                     </button>
                 </div>
                 <!--Body session-->
-                <div x-show="open" class="mt-2 border-t pt-2">
-                    <p>⚡ 6 x 400m à 90% VMA</p>
-                    <p>🏃‍♂️ 1 min de récupération entre chaque</p>
-                    <p>🧘‍♂️ Étirements et retour au calme</p>
+                <div x-show="open" class="mt-4 border-t pt-4">
+                        <!--Partie 1-->
+                        <div class="flex relative pb-3">
+                            <div class="w-1/12 px-6 hidden sm:block">
+                                <div class="w-7 h-7 flex items-center justify-center bg-blue-900 text-white font-semibold rounded-full mt-4">
+                                  <p class="text-white">1</p>
+                                </div>
+                              </div>
+                            <!-- Bloc icône visible sur mobile uniquement, sans margin-top -->
+                            <div class="w-7 h-7 flex items-center justify-center bg-blue-900 text-white font-semibold rounded-full absolute top-[-10px] right-0 sm:hidden mt-0">
+                              <p class="text-white">1</p>
+                            </div>
+                          
+                            <div class="w-full sm:w-11/12 px-3">
+                              <div class="p-4 bg-gray-100 rounded-lg">
+                                <div class="block sm:hidden">
+                                  <!-- L'icône est déjà positionnée ici -->
+                                </div>
+                                <div class="bg-white flex flex-row w-full justify-between p-3 rounded-lg">
+                                  <div class="width-auto">
+                                    <p class="text-gray-400">
+                                      <span class="font-semibold text-black">1h15</span> à <span class="font-semibold text-black">6:30 - 6:45</span> /km   
+                                    </p>
+                                  </div>
+                                  <div class="width-auto">
+                                    <p class="text-orange-500 font-semibold text-sm">Allure EF</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                 </div>
             </div>
 
