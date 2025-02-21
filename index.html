@@ -69,7 +69,7 @@
                     </div>
                 </div>
                 <div class="text-gray-400 text-xs/5 font-normal pb-3">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum commodo facilisis nibh, a congue turpis lacinia at. sit amet ac nisl. Duis sed euismod erat, eu efficitur felis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc aliquet sodales rutrum. Curabitur scelerisque quam eget nunc viverra pellentesque.</p>    
+                    <p>Footing à courir 100% en endurance fondamentale. Le but n'est pas de courir pile au milieu de la fourchette d'allure donnée, mais de faire au mieux en fonction de ta forme du jour. Si tu mesures ton cardio, reste en-dessous des 75% de ta Fréquence Cardiaque Maximale, c'est la limite de l'endurance fondamentale.</p>    
                 </div>
                 <div class="flex flex-row-reverse items-end">
                     <button @click="open = !open" class="rounded-md bg-gray-50 px-3 py-2 text-sm font-medium text-gray-500 ring-1 ring-gray-500/10 ring-inset inline-flex">
@@ -80,10 +80,37 @@
                     </button>
                 </div>
                 <!--Body session-->
-                <div x-show="open" class="mt-2 border-t pt-2">
-                    <p>⚡ 6 x 400m à 90% VMA</p>
-                    <p>🏃‍♂️ 1 min de récupération entre chaque</p>
-                    <p>🧘‍♂️ Étirements et retour au calme</p>
+                <div x-show="open" class="mt-4 border-t pt-4">
+                    <div class="">
+                        <div class="flex w-full">
+                            <!-- Bloc caché sur mobile, affiché à partir de md -->
+                            <div class="w-1/12 px-6 hidden md:block">
+                                <div class="w-7 h-7 flex items-center justify-center bg-blue-900 text-white font-semibold rounded-full mt-4">
+                                    <p class="text-white">1</p>
+                                </div>
+                            </div>
+                        
+                            <!-- Bloc principal -->
+                            <div class="w-11/12 md:w-full px-3">
+                                <div class="p-4 bg-gray-100 rounded-lg">
+                                    <div class="bg-white flex justify-between items-center w-full p-3 rounded-lg">
+                                        <!-- Bloc de gauche -->
+                                        <div class="flex-shrink-0">
+                                            <p class="text-gray-400">
+                                                <span class="font-semibold text-black">45min</span> à 
+                                                <span class="font-semibold text-black">6:11 - 6:40</span> /km   
+                                            </p>
+                                        </div>
+                                        <!-- Bloc de droite -->
+                                        <div class="flex-shrink-0">
+                                            <p class="text-orange-500 font-semibold">Allure EF</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
                 </div>
             </div>
 
