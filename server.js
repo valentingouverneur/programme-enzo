@@ -1,11 +1,11 @@
 const express = require('express');
-const fs = require('fs').promises;
+const fs = require('fs');
 const path = require('path');
 const app = express();
 const port = 3000;
 
 // Middleware pour servir les fichiers statiques
-app.use(express.static('.'));
+app.use(express.static(path.join(__dirname)));
 app.use(express.json());
 
 // Middleware pour logger les requêtes
@@ -15,14 +15,26 @@ app.use((req, res, next) => {
 });
 
 // Fonction utilitaire pour lire le fichier JSON
-async function lireProgrammes() {
-    const data = await fs.readFile('training-programs.json', 'utf8');
-    return JSON.parse(data);
+function lireProgrammes() {
+    const filePath = path.join(__dirname, 'training-programs.json');
+    try {
+        const data = fs.readFileSync(filePath, 'utf8');
+        return JSON.parse(data);
+    } catch (error) {
+        console.error('Erreur lors de la lecture du fichier:', error);
+        throw error;
+    }
 }
 
 // Fonction utilitaire pour sauvegarder le fichier JSON
-async function sauvegarderProgrammes(programmes) {
-    await fs.writeFile('training-programs.json', JSON.stringify(programmes, null, 2));
+function sauvegarderProgrammes(programmes) {
+    const filePath = path.join(__dirname, 'training-programs.json');
+    try {
+        fs.writeFileSync(filePath, JSON.stringify(programmes, null, 2));
+    } catch (error) {
+        console.error('Erreur lors de la sauvegarde du fichier:', error);
+        throw error;
+    }
 }
 
 // Fonction pour obtenir la semaine actuelle basée sur la date
@@ -73,7 +85,7 @@ function calculerTotaux(etapes) {
 // Endpoint pour obtenir le programme de la semaine actuelle
 app.get('/api/programme-actuel', async (req, res) => {
     try {
-        const programmes = await lireProgrammes();
+        const programmes = lireProgrammes();
         const semaineActuelle = "1"; // On force l'affichage de la semaine 1
 
         const response = {
@@ -93,7 +105,7 @@ app.get('/api/programme-actuel', async (req, res) => {
 // Endpoint pour obtenir toutes les semaines
 app.get('/api/semaines', async (req, res) => {
     try {
-        const programmes = await lireProgrammes();
+        const programmes = lireProgrammes();
         res.json(programmes.programme10km.semaines);
     } catch (error) {
         res.status(500).json({ error: 'Erreur lors de la lecture des semaines' });
@@ -103,7 +115,7 @@ app.get('/api/semaines', async (req, res) => {
 // Endpoint pour ajouter une nouvelle semaine
 app.post('/api/semaines', async (req, res) => {
     try {
-        const programmes = await lireProgrammes();
+        const programmes = lireProgrammes();
         const { dateDebut, numero } = req.body;
         
         if (programmes.programme10km.semaines[numero]) {
@@ -115,7 +127,7 @@ app.post('/api/semaines', async (req, res) => {
             seances: []
         };
         
-        await sauvegarderProgrammes(programmes);
+        sauvegarderProgrammes(programmes);
         res.json({ success: true });
     } catch (error) {
         res.status(500).json({ error: 'Erreur lors de l\'ajout de la semaine' });
@@ -125,7 +137,7 @@ app.post('/api/semaines', async (req, res) => {
 // Endpoint pour supprimer une semaine
 app.delete('/api/semaines/:numero', async (req, res) => {
     try {
-        const programmes = await lireProgrammes();
+        const programmes = lireProgrammes();
         const numeroSemaine = req.params.numero;
         
         if (!programmes.programme10km.semaines[numeroSemaine]) {
@@ -133,7 +145,7 @@ app.delete('/api/semaines/:numero', async (req, res) => {
         }
         
         delete programmes.programme10km.semaines[numeroSemaine];
-        await sauvegarderProgrammes(programmes);
+        sauvegarderProgrammes(programmes);
         res.json({ success: true });
     } catch (error) {
         res.status(500).json({ error: 'Erreur lors de la suppression de la semaine' });
@@ -144,7 +156,7 @@ app.delete('/api/semaines/:numero', async (req, res) => {
 app.post('/api/seances', async (req, res) => {
     try {
         console.log('Nouvelle séance reçue:', req.body);
-        const programmes = await lireProgrammes();
+        const programmes = lireProgrammes();
         const semaineActuelle = obtenirSemaineActuelle(programmes.programme10km.semaines);
         console.log('Semaine actuelle:', semaineActuelle);
         
@@ -161,7 +173,7 @@ app.post('/api/seances', async (req, res) => {
         };
         
         programmes.programme10km.semaines[semaineActuelle].seances.push(nouvelleSeance);
-        await sauvegarderProgrammes(programmes);
+        sauvegarderProgrammes(programmes);
         console.log('Séance ajoutée avec succès');
         
         res.json({ success: true, seance: nouvelleSeance });
@@ -174,7 +186,7 @@ app.post('/api/seances', async (req, res) => {
 // Endpoint pour modifier une séance existante
 app.put('/api/seances/:index', async (req, res) => {
     try {
-        const programmes = await lireProgrammes();
+        const programmes = lireProgrammes();
         const semaineActuelle = obtenirSemaineActuelle(programmes.programme10km.semaines);
         const index = parseInt(req.params.index);
         
@@ -195,7 +207,7 @@ app.put('/api/seances/:index', async (req, res) => {
             distance: totaux.distance
         };
         
-        await sauvegarderProgrammes(programmes);
+        sauvegarderProgrammes(programmes);
         res.json({ success: true, seance: programmes.programme10km.semaines[semaineActuelle].seances[index] });
     } catch (error) {
         res.status(500).json({ error: 'Erreur lors de la modification de la séance' });
@@ -205,7 +217,7 @@ app.put('/api/seances/:index', async (req, res) => {
 // Endpoint pour supprimer une séance
 app.delete('/api/seances/:index', async (req, res) => {
     try {
-        const programmes = await lireProgrammes();
+        const programmes = lireProgrammes();
         const semaineActuelle = obtenirSemaineActuelle(programmes.programme10km.semaines);
         const index = parseInt(req.params.index);
         
@@ -218,7 +230,7 @@ app.delete('/api/seances/:index', async (req, res) => {
             seance.numero_seance = i + 1;
         });
         
-        await sauvegarderProgrammes(programmes);
+        sauvegarderProgrammes(programmes);
         res.json({ success: true });
     } catch (error) {
         res.status(500).json({ error: 'Erreur lors de la suppression de la séance' });
@@ -228,7 +240,7 @@ app.delete('/api/seances/:index', async (req, res) => {
 // Endpoint pour obtenir toutes les séances de toutes les semaines
 app.get('/api/seances-toutes', async (req, res) => {
     try {
-        const programmes = await lireProgrammes();
+        const programmes = lireProgrammes();
         const toutesLesSeances = [];
         
         for (const [numero, semaine] of Object.entries(programmes.programme10km.semaines)) {
@@ -250,7 +262,7 @@ app.get('/api/seances-toutes', async (req, res) => {
 // Endpoint pour déplacer une séance vers une autre semaine
 app.put('/api/seances/:index/deplacer', async (req, res) => {
     try {
-        const programmes = await lireProgrammes();
+        const programmes = lireProgrammes();
         const { nouvelleSemaine } = req.body;
         const semaineActuelle = obtenirSemaineActuelle(programmes.programme10km.semaines);
         const index = parseInt(req.params.index);
@@ -278,7 +290,7 @@ app.put('/api/seances/:index/deplacer', async (req, res) => {
             seance.numero_seance = i + 1;
         });
         
-        await sauvegarderProgrammes(programmes);
+        sauvegarderProgrammes(programmes);
         res.json({ success: true });
     } catch (error) {
         res.status(500).json({ error: 'Erreur lors du déplacement de la séance' });
