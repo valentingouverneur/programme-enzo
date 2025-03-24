@@ -1,5 +1,5 @@
 const express = require('express');
-const fs = require('fs');
+const fs = require('node:fs');
 const path = require('path');
 const app = express();
 const port = 3000;
@@ -17,7 +17,9 @@ app.use((req, res, next) => {
 // Fonction utilitaire pour lire le fichier JSON
 function lireProgrammes() {
     try {
-        const jsonString = fs.readFileSync('training-programs.json', 'utf8');
+        const filePath = path.join(process.cwd(), 'training-programs.json');
+        console.log('Tentative de lecture du fichier:', filePath);
+        const jsonString = fs.readFileSync(filePath, 'utf8');
         return JSON.parse(jsonString);
     } catch (error) {
         console.error('Erreur lors de la lecture du fichier:', error);
@@ -28,7 +30,8 @@ function lireProgrammes() {
 // Fonction utilitaire pour sauvegarder le fichier JSON
 function sauvegarderProgrammes(programmes) {
     try {
-        fs.writeFileSync('training-programs.json', JSON.stringify(programmes, null, 2));
+        const filePath = path.join(process.cwd(), 'training-programs.json');
+        fs.writeFileSync(filePath, JSON.stringify(programmes, null, 2));
     } catch (error) {
         console.error('Erreur lors de la sauvegarde du fichier:', error);
         throw error;

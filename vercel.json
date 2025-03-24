@@ -6,6 +6,10 @@
             "use": "@vercel/node"
         },
         {
+            "src": "training-programs.json",
+            "use": "@vercel/static"
+        },
+        {
             "src": "*.html",
             "use": "@vercel/static"
         },
@@ -28,11 +32,8 @@
             "dest": "/server.js"
         },
         {
-            "handle": "filesystem"
-        },
-        {
             "src": "/(.*)",
-            "dest": "/index.html"
+            "dest": "/server.js"
         }
     ]
 } 
