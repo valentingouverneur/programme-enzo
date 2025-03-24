@@ -16,10 +16,9 @@ app.use((req, res, next) => {
 
 // Fonction utilitaire pour lire le fichier JSON
 function lireProgrammes() {
-    const filePath = path.join(__dirname, 'training-programs.json');
     try {
-        const data = fs.readFileSync(filePath, 'utf8');
-        return JSON.parse(data);
+        const jsonString = fs.readFileSync('training-programs.json', 'utf8');
+        return JSON.parse(jsonString);
     } catch (error) {
         console.error('Erreur lors de la lecture du fichier:', error);
         throw error;
@@ -28,9 +27,8 @@ function lireProgrammes() {
 
 // Fonction utilitaire pour sauvegarder le fichier JSON
 function sauvegarderProgrammes(programmes) {
-    const filePath = path.join(__dirname, 'training-programs.json');
     try {
-        fs.writeFileSync(filePath, JSON.stringify(programmes, null, 2));
+        fs.writeFileSync('training-programs.json', JSON.stringify(programmes, null, 2));
     } catch (error) {
         console.error('Erreur lors de la sauvegarde du fichier:', error);
         throw error;
@@ -81,6 +79,11 @@ function calculerTotaux(etapes) {
         distance: Math.round(distanceTotale * 10) / 10
     };
 }
+
+// Route pour servir index.html
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
 
 // Endpoint pour obtenir le programme de la semaine actuelle
 app.get('/api/programme-actuel', async (req, res) => {
