@@ -1,0 +1,12 @@
+{
+  "name": "programme-running-enzo",
+  "version": "1.0.0",
+  "description": "Programme de running dynamique",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programme de course</title>
+    <link rel="icon" href="medal.svg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        /* Hiérarchie visuelle améliorée */
+        .titre-principal {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .titre-secondaire {
+            font-size: 1.75rem;
+            line-height: 1.3;
+            margin-bottom: 0.75rem;
+        }
+
+        .titre-seance {
+            font-size: 1.5rem;
+            line-height: 1.4;
+            margin-bottom: 0.5rem;
+        }
+
+        .espacement-section {
+            margin-bottom: 2rem;
+        }
+
+        .espacement-seance {
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body class="static bg-gray-100 px-0 pt-4 sm:p-4" x-data="{ 
+    programme: null,
+    async init() {
+        const response = await fetch('/api/programme-actuel');
+        this.programme = await response.json();
+    }
+}">
+    <!-- Header -->
+    <div class="flex flex-col items-center espacement-section">
+        <div class="flex items-center space-x-3">
+            <img src="ppenzo.png" alt="Profil" class="w-12 h-12 rounded-full self-start">
+            <p class="text-gray-700 text-sm text-center mt-2">
+                Hey, <span class="font-semibold text-blue-950">Enzo ! 👋</span>
+            </p>
+        </div>
+    </div>
+
+    <!--Presentation-->
+    <div class="relative p-6 sm:rounded-lg mt-6 max-w-full sm:max-w-[1072px] mx-auto mb-8 bg-blue-950 flex items-center justify-between overflow-hidden">
+        <div class="relative z-10">
+            <h2 class="titre-principal text-white" x-text="programme?.titre">Programme de 11 semaines pour préparer un semi-marathon</h2>
+            <p class="text-orange-500 text-sm sm:text-base font-semibold mb-2" x-text="programme?.description">Bloc 3 - Allure spécifique 10km</p>
+            <p class="text-orange-500 text-sm sm:text-base">Semaine <span x-text="programme?.semaine_actuelle"></span>/<span x-text="programme?.duree_totale_semaines"></span></p>
+        </div>
+        <img src="medal.svg" alt="Icône" class="absolute right-4 top-[20%] h-20 z-0">
+    </div>
+
+    <!--Programme-->
+    <div class="relative -mt-12 max-w-full sm:max-w-[1072px] mx-auto">
+        <!-- Boucle sur les séances -->
+        <template x-for="seance in programme?.seances" :key="seance.id">
+            <div class="bg-white p-6 mb-2 sm:mb-6 rounded-lg border-2 border-grey-600 espacement-seance" x-data="{ open: false }">
+                <!--Badge-->
+                <div class="flex items-center mb-3">
+                    <div class="pr-2">
+                        <span class="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-gray-500/10 ring-inset" x-text="seance.type">ROUTE</span>
+                    </div>
+                    <template x-if="seance.is_seance_epreuve">
+                        <div class="pr-2">
+                            <span class="inline-flex items-center rounded-md bg-red-100 px-2 py-1 text-xs font-semibold text-red-600 ring-1 ring-red-600/10 ring-inset uppercase">Séance épreuve !</span>
+                        </div>
+                    </template>
+                </div>
+                <!--Header Session-->
+                <div class="flex justify-between items-center pb-4">
+                    <div class="mr-2">
+                        <h2 class="titre-seance font-semibold poppins-regular-italic">
+                            <span x-text="seance.titre"></span>
+                            <span class="flip" x-text="seance.emoji"></span>
+                        </h2>
+                        <div>
+                            <p class="text-orange-500 text-sm font-semibold">
+                                Séance <span x-text="seance.numero_seance"></span>/3 - Semaine <span x-text="programme?.semaine_actuelle"></span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="badge-header flex flex-row space-x-3">
+                        <div class="w-12 h-12 rounded-xl bg-orange-500 px-2 py-2 text-xs font-medium text-red-600 ring-1 ring-red-600/10 ring-inset">
+                            <p class="text-white text-center" x-text="seance.distance"></p>
+                            <p class="text-white text-center">km</p>
+                        </div>
+                        <div class="w-12 h-12 rounded-xl bg-orange-500 px-2 py-2 text-xs font-medium text-red-600 ring-1 ring-red-600/10 ring-inset">
+                            <p class="text-white text-center" x-text="seance.duree"></p>
+                            <p class="text-white text-center">min</p>
+                        </div>
+                        <div class="w-12 h-12 rounded-xl px-2 py-2 text-xs font-medium text-white ring-1 ring-red-600/10 ring-inset" :class="seance.difficulte >= 4 ? 'bg-red-500' : 'bg-green-500'">
+                            <p class="text-white text-center">diff.</p>
+                            <p class="text-white text-center" x-text="seance.difficulte"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-gray-400 text-sm font-normal pb-4">
+                    <p x-text="seance.description"></p>    
+                </div>
+                <div class="flex flex-row-reverse items-end">
+                    <button @click="open = !open" class="rounded-md bg-gray-50 px-3 py-2 text-sm font-medium text-gray-500 ring-1 ring-gray-500/10 ring-inset inline-flex">
+                        <span>Voir la séance</span>
+                        <svg class="mt-1 w-3 h-3 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                        </svg>                    
+                    </button>
+                </div>
+                <!--Body session-->
+                <div x-show="open" class="mt-6 border-t pt-6">
+                    <div class="">
+                        <template x-for="(etape, index) in seance.etapes" :key="index">
+                            <div class="flex relative pb-4">
+                                <div class="w-1/12 px-6 hidden sm:block">
+                                    <div class="w-7 h-7 flex items-center justify-center bg-blue-900 text-white font-semibold rounded-full mt-4">
+                                        <p class="text-white" x-text="index + 1"></p>
+                                    </div>
+                                </div>
+                                <div class="w-7 h-7 flex items-center justify-center bg-blue-900 text-white font-semibold rounded-full absolute top-[-10px] right-[-10px] sm:hidden mt-0">
+                                    <p class="text-white" x-text="index + 1"></p>
+                                </div>
+                                <div class="w-full sm:w-11/12 px-0 sm:px-3">
+                                    <div class="p-4 bg-gray-100 rounded-lg">
+                                        <div class="bg-white flex flex-row justify-between p-3 rounded-lg" :class="etape.nombre_repetitions ? 'w-[85%] sm:w-[93%]' : 'w-full'">
+                                            <div class="w-auto">
+                                                <p class="text-gray-400">
+                                                    <span class="font-semibold text-black" x-text="etape.duree.toString().includes('min') ? etape.duree : etape.duree + 'min'"></span>
+                                                    <template x-if="etape.allure !== 'lente'">
+                                                        <span> à <span class="font-semibold text-black" x-text="etape.allure"></span> /km</span>
+                                                    </template>
+                                                </p>
+                                            </div>
+                                            <div class="w-auto">
+                                                <p class="text-orange-500 font-semibold text-sm" x-text="etape.type"></p>
+                                            </div>
+                                        </div>
+                                        <template x-if="etape.recuperation">
+                                            <div class="bg-white flex flex-row justify-between p-3 rounded-lg mt-3" :class="etape.nombre_repetitions ? 'w-[85%] sm:w-[93%]' : 'w-full'">
+                                                <div class="w-auto">
+                                                    <p class="text-gray-400">
+                                                        <span class="font-semibold text-black" x-text="etape.recuperation.duree.toString().includes('min') ? etape.recuperation.duree : etape.recuperation.duree + 'min'"></span>
+                                                        <span> à <span class="font-semibold text-black" x-text="etape.recuperation.allure"></span> /km</span>
+                                                    </p>
+                                                </div>
+                                                <div class="w-auto">
+                                                    <p class="text-orange-500 font-semibold text-sm" x-text="etape.recuperation.type"></p>
+                                                </div>
+                                            </div>
+                                        </template>
+                                        <template x-if="etape.nombre_repetitions">
+                                            <div class="flex flex-col absolute top-[17%] right-[3%]">
+                                                <div class="w-10 h-10 flex items-center justify-center bg-orange-500 text-white font-semibold rounded-full mb-2">
+                                                    <p x-text="etape.nombre_repetitions + 'x'"></p>
+                                                </div>
+                                                <div class="w-10 h-10 flex items-center justify-center bg-orange-500 text-white font-semibold rounded-full">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <polyline points="17 1 21 5 17 9"></polyline>
+                                                        <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+                                                        <polyline points="7 23 3 19 7 15"></polyline>
+                                                        <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </template>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </div>
+</body>
+</html>

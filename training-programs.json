@@ -1,0 +1,1019 @@
+{
+  "programme10km": {
+    "titre": "Programme Semi-Marathon",
+    "description": "Programme complet de 11 semaines pour préparer un semi-marathon",
+    "duree_semaines": 11,
+    "semaines": {
+      "1": {
+        "titre": "Bloc 1 : Seuil 30 - Semaine 1",
+        "seances": [
+          {
+            "id": 1,
+            "titre": "Seuil 30",
+            "emoji": "🚀",
+            "numero_seance": 1,
+            "distance": 8.5,
+            "duree": 45,
+            "difficulte": 3,
+            "type": "A NE PAS RATER",
+            "description": "1ère séance de fractionné, ne cherchez pas à battre des records, essayez d'être le plus proche possible de votre allure 5km. Si c'est \"facile\", n'allez pas plus vite pendant le 1'30 rapide, accélérez plutôt la récupération !",
+            "etapes": [
+              {
+                "duree": "20",
+                "allure": "6:45",
+                "type": "Echauffement"
+              },
+              {
+                "duree": "1min30",
+                "allure": "5:10",
+                "type": "Seuil",
+                "nombre_repetitions": 8,
+                "recuperation": {
+                  "duree": "1min30",
+                  "allure": "6:45",
+                  "type": "Récupération"
+                }
+              },
+              {
+                "duree": "5",
+                "allure": "6:45",
+                "type": "Retour au calme"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "titre": "Endurance fondamentale",
+            "emoji": "🏃🏻",
+            "numero_seance": 2,
+            "distance": 6.5,
+            "duree": 45,
+            "difficulte": 1,
+            "type": "A NE PAS RATER",
+            "description": "Le mot d'ordre : relax ! La séance d'endurance fondamentale, c'est celle où il faut en profiter pour se détendre pour bien récupérer du fractionné. Aller trop vite sur cette séance est contre-productif, ne tombez pas dans le piège !",
+            "etapes": [
+              {
+                "duree": "45",
+                "allure": "6:45",
+                "type": "Endurance Fondamentale"
+              }
+            ]
+          },
+          {
+            "id": 3,
+            "titre": "Sortie longue",
+            "emoji": "⏰",
+            "numero_seance": 3,
+            "distance": 11,
+            "duree": 65,
+            "difficulte": 2,
+            "type": "A NE PAS RATER",
+            "description": "On commence par une sortie longue facile pour progressivement habituer le corps aux efforts longs sans risque de blessure. On ajoute une petite touche d'allure marathon pour casser la monotonie de la sortie avec un tempo un peu plus rapide, mais rien qui devrait vous sembler trop difficile.",
+            "etapes": [
+              {
+                "duree": "30",
+                "allure": "6:45",
+                "type": "Endurance Fondamentale"
+              },
+              {
+                "duree": "5",
+                "allure": "6:15",
+                "type": "Allure Marathon",
+                "nombre_repetitions": 5,
+                "recuperation": {
+                  "duree": "3",
+                  "allure": "6:45",
+                  "type": "Récupération"
+                }
+              },
+              {
+                "duree": "5",
+                "allure": "6:45",
+                "type": "Retour au calme"
+              }
+            ]
+          }
+        ]
+      },
+      "2": {
+        "seances": [
+          {
+            "id": 4,
+            "titre": "Seuil 30",
+            "emoji": "🚀",
+            "numero_seance": 1,
+            "distance": 9.5,
+            "duree": 50,
+            "difficulte": 3,
+            "type": "A NE PAS RATER",
+            "description": "Même principe qu'en semaine 1 pour ce fractionné mais avec 2 répétitions de plus ! Ça va sûrement piquer sur la fin… si c'est le cas, essayez de ne pas vous crisper, notamment dans le haut du corps pour ne pas vous freiner",
+            "etapes": [
+              {
+                "duree": "20",
+                "allure": "6:45",
+                "type": "Echauffement"
+              },
+              {
+                "duree": "1min30",
+                "allure": "5:10",
+                "type": "Seuil",
+                "nombre_repetitions": 10,
+                "recuperation": {
+                  "duree": "1min30",
+                  "allure": "6:45",
+                  "type": "Récupération"
+                }
+              },
+              {
+                "duree": "5",
+                "allure": "6:45",
+                "type": "Retour au calme"
+              }
+            ]
+          },
+          {
+            "id": 5,
+            "titre": "Endurance fondamentale",
+            "emoji": "🏃🏻",
+            "numero_seance": 2,
+            "distance": 6.5,
+            "duree": 45,
+            "difficulte": 1,
+            "type": "A NE PAS RATER",
+            "description": "Footing en endurance fondamentale. L'impression en fin de séance doit être celle d'être plus en forme qu'avant de l'avoir commencée. On ne doit pas se fatiguer sur cette séance, juste enchaîner les kilomètres sans stress !",
+            "etapes": [
+              {
+                "duree": "45",
+                "allure": "6:45",
+                "type": "Endurance Fondamentale"
+              }
+            ]
+          },
+          {
+            "id": 6,
+            "titre": "Sortie longue",
+            "emoji": "⏰",
+            "numero_seance": 3,
+            "distance": 11,
+            "duree": 65,
+            "difficulte": 2,
+            "type": "A NE PAS RATER",
+            "description": "La sortie longue augmente de 5', on est sur une durée classique pour un semi-marathonien. Toujours un peu d'allure marathon pour mettre du rythme, pensez à courir bien relâché pendant ces segments plus rapides !",
+            "etapes": [
+              {
+                "duree": "40",
+                "allure": "6:45",
+                "type": "Endurance Fondamentale"
+              },
+              {
+                "duree": "7",
+                "allure": "6:15",
+                "type": "Allure Marathon",
+                "nombre_repetitions": 4,
+                "recuperation": {
+                  "duree": "2",
+                  "allure": "6:45",
+                  "type": "Récupération"
+                }
+              },
+              {
+                "duree": "5",
+                "allure": "6:45",
+                "type": "Retour au calme"
+              }
+            ]
+          }
+        ]
+      },
+      "3": {
+        "seances": [
+          {
+            "id": 7,
+            "titre": "Seuil 30",
+            "emoji": "⚡",
+            "numero_seance": 1,
+            "distance": 10.5,
+            "duree": 55,
+            "difficulte": 3,
+            "type": "A NE PAS RATER",
+            "description": "Dernière séance de fractionné du premier bloc, avec douze répétitions, on a une belle séance qui devrait vous challenger. C'est le moment de ne pas lâcher dans les derniers intervalles, c'est là que ça travaille !",
+            "etapes": [
+              {
+                "duree": "20",
+                "allure": "6:45",
+                "type": "Echauffement"
+              },
+              {
+                "duree": "1min30",
+                "allure": "5:10",
+                "type": "Seuil",
+                "nombre_repetitions": 12,
+                "recuperation": {
+                  "duree": "1min30",
+                  "allure": "6:45",
+                  "type": "Récupération"
+                }
+              },
+              {
+                "duree": "5",
+                "allure": "6:45",
+                "type": "Retour au calme"
+              }
+            ]
+          },
+          {
+            "id": 8,
+            "titre": "Endurance fondamentale",
+            "emoji": "🏃🏻",
+            "numero_seance": 2,
+            "distance": 6.5,
+            "duree": 45,
+            "difficulte": 1,
+            "type": "A NE PAS RATER",
+            "description": "L'endurance fondamentale, c'est aussi le meilleur moment pour travailler sa technique !",
+            "etapes": [
+              {
+                "duree": "45",
+                "allure": "6:45",
+                "type": "Endurance Fondamentale"
+              }
+            ]
+          },
+          {
+            "id": 9,
+            "titre": "Sortie longue",
+            "emoji": "🌟",
+            "numero_seance": 3,
+            "distance": 11,
+            "duree": 65,
+            "difficulte": 2,
+            "type": "A NE PAS RATER",
+            "description": "On continue d'allonger doucement la distance et les temps des fractions à allure marathon. Vous devriez être encore assez à l'aise, sinon peut-être que vous manquez encore un peu d'endurance longue, mais on va continuer de travailler ça dans les prochaines semaines !",
+            "etapes": [
+              {
+                "duree": "50",
+                "allure": "6:45",
+                "type": "Endurance Fondamentale"
+              },
+              {
+                "duree": "10",
+                "allure": "6:15",
+                "type": "Allure Marathon",
+                "nombre_repetitions": 3,
+                "recuperation": {
+                  "duree": "2",
+                  "allure": "6:45",
+                  "type": "Récupération"
+                }
+              },
+              {
+                "duree": "5",
+                "allure": "6:45",
+                "type": "Retour au calme"
+              }
+            ]
+          }
+        ]
+      },
+      "4": {
+        "seances": [
+          {
+            "id": 10,
+            "titre": "Seuil 60",
+            "emoji": "⚡",
+            "numero_seance": 1,
+            "distance": 7,
+            "duree": 35,
+            "difficulte": 2,
+            "type": "A NE PAS RATER",
+            "description": "La séance de fractionné de cette semaine est très facile (allure plus lente, fractions plus courtes et volume plus faible), ne cherchez pas à en faire plus c'est normal, c'est une semaine de récupération !",
+            "etapes": [
+              {
+                "duree": "15",
+                "allure": "6:45",
+                "type": "Echauffement"
+              },
+              {
+                "duree": "1",
+                "allure": "5:30",
+                "type": "Seuil",
+                "nombre_repetitions": 8,
+                "recuperation": {
+                  "duree": "1",
+                  "allure": "6:45",
+                  "type": "Récupération"
+                }
+              },
+              {
+                "duree": "5",
+                "allure": "6:45",
+                "type": "Retour au calme"
+              }
+            ]
+          },
+          {
+            "id": 11,
+            "titre": "Endurance fondamentale",
+            "emoji": "🏃🏻",
+            "numero_seance": 2,
+            "distance": 4.5,
+            "duree": 30,
+            "difficulte": 1,
+            "type": "A NE PAS RATER",
+            "description": "Début de la semaine d'assimilation / de récupération. Toutes les séances vont baisser en volume et en intensité. Pour commencer, un simple footing lent, relax pour vous reposer des trois premières semaines",
+            "etapes": [
+              {
+                "duree": "30",
+                "allure": "6:45",
+                "type": "Endurance Fondamentale"
+              }
+            ]
+          },
+          {
+            "id": 12,
+            "titre": "Sortie longue",
+            "emoji": "🌟",
+            "numero_seance": 3,
+            "distance": 9.5,
+            "duree": 65,
+            "difficulte": 2,
+            "type": "A NE PAS RATER",
+            "description": "Une sortie longue d'1h05 seulement, à nouveau pour privilégier la récupération. Peu de fatigue et des batteries qui seront bien rechargées pour attaquer la suite !",
+            "etapes": [
+              {
+                "duree": "65",
+                "allure": "6:45",
+                "type": "Endurance Fondamentale"
+              }
+            ]
+          }
+        ]
+      },
+      "5": {
+        "seances": [
+          {
+            "id": 13,
+            "titre": "Seuil 60",
+            "emoji": "⚡",
+            "numero_seance": 1,
+            "distance": 8.5,
+            "duree": 45,
+            "difficulte": 3,
+            "type": "A NE PAS RATER",
+            "description": "Changement d'allure pour le fractionné avec du 10km. Un peu plus lent mais pas forcément plus simple à gérer car les fractions sont deux fois plus longues. Une séance classique et néanmoins très efficace !",
+            "etapes": [
+              {
+                "duree": "20",
+                "allure": "6:45",
+                "type": "Echauffement"
+              },
+              {
+                "duree": "4",
+                "allure": "5:30",
+                "type": "Seuil",
+                "nombre_repetitions": 5,
+                "recuperation": {
+                  "duree": "1min30",
+                  "allure": "6:45",
+                  "type": "Récupération"
+                }
+              },
+              {
+                "duree": "5",
+                "allure": "6:45",
+                "type": "Retour au calme"
+              }
+            ]
+          },
+          {
+            "id": 14,
+            "titre": "Endurance fondamentale",
+            "emoji": "🏃🏻",
+            "numero_seance": 2,
+            "distance": 6.5,
+            "duree": 45,
+            "difficulte": 1,
+            "type": "A NE PAS RATER",
+            "description": "Le footing de recup, on garde son focus sur le fait de courir le plus relâché possible, sans jamais forcer !",
+            "etapes": [
+              {
+                "duree": "45",
+                "allure": "6:45",
+                "type": "Endurance Fondamentale"
+              }
+            ]
+          },
+          {
+            "id": 15,
+            "titre": "Sortie longue",
+            "emoji": "🌟",
+            "numero_seance": 3,
+            "distance": 11,
+            "duree": 65,
+            "difficulte": 2,
+            "type": "A NE PAS RATER",
+            "description": "Les sorties longues commencent à être plus intenses… Pas par leur durée qui reste raisonnable mais par l'ajout de portion à votre allure de compétition. Commencez à apprivoiser cette allure, à l'imprimer dans votre cerveau !",
+            "etapes": [
+              {
+                "duree": "50",
+                "allure": "6:45",
+                "type": "Endurance Fondamentale"
+              },
+              {
+                "duree": "5",
+                "allure": "5:45",
+                "type": "Allure Semi",
+                "nombre_repetitions": 4,
+                "recuperation": {
+                  "duree": "2",
+                  "allure": "6:45",
+                  "type": "Récupération"
+                }
+              },
+              {
+                "duree": "15",
+                "allure": "6:45",
+                "type": "Retour au calme"
+              }
+            ]
+          }
+        ]
+      },
+      "6": {
+        "seances": [
+          {
+            "id": 16,
+            "titre": "Allure Semi",
+            "emoji": "⚡",
+            "numero_seance": 1,
+            "distance": 9,
+            "duree": 50,
+            "difficulte": 3,
+            "type": "A NE PAS RATER",
+            "description": "L'allure semi-marathon est vraiment utile pour le marathonien. Travailler cette allure pour y être plus à l'aise vous donnera une impression d'aisance en courant à allure marathon ensuite",
+            "etapes": [
+              {
+                "duree": "20",
+                "allure": "6:45",
+                "type": "Echauffement"
+              },
+              {
+                "duree": "8",
+                "allure": "5:45",
+                "type": "Allure Semi",
+                "nombre_repetitions": 3,
+                "recuperation": {
+                  "duree": "2",
+                  "allure": "6:45",
+                  "type": "Récupération"
+                }
+              },
+              {
+                "duree": "10",
+                "allure": "6:45",
+                "type": "Retour au calme"
+              }
+            ]
+          },
+          {
+            "id": 17,
+            "titre": "Endurance fondamentale",
+            "emoji": "🏃🏻",
+            "numero_seance": 2,
+            "distance": 6.5,
+            "duree": 45,
+            "difficulte": 1,
+            "type": "A NE PAS RATER",
+            "description": "Classique footing, toujours en endurance fondamentale, toujours en essayant de courir relâché, avec une bonne technique pour économiser son énergie… Ce sera la clé le jour du semi !",
+            "etapes": [
+              {
+                "duree": "45",
+                "allure": "6:45",
+                "type": "Endurance Fondamentale"
+              }
+            ]
+          },
+          {
+            "id": 18,
+            "titre": "Sortie longue",
+            "emoji": "🌟",
+            "numero_seance": 3,
+            "distance": 11,
+            "duree": 65,
+            "difficulte": 2,
+            "type": "A NE PAS RATER",
+            "description": "On continue les sorties longues incluant de l'allure semi-marathon dans la 2ème moitié de la sortie… pour que vous travailliez cette allure en condition de fatigue, comme lors de la fin de course le jour J !",
+            "etapes": [
+              {
+                "duree": "50",
+                "allure": "6:45",
+                "type": "Endurance Fondamentale"
+              },
+              {
+                "duree": "6",
+                "allure": "5:45",
+                "type": "Allure Semi",
+                "nombre_repetitions": 4,
+                "recuperation": {
+                  "duree": "2",
+                  "allure": "6:45",
+                  "type": "Récupération"
+                }
+              },
+              {
+                "duree": "15",
+                "allure": "6:45",
+                "type": "Retour au calme"
+              }
+            ]
+          }
+        ]
+      },
+      "7": {
+        "seances": [
+          {
+            "id": 19,
+            "titre": "Seuil 60",
+            "emoji": "⚡",
+            "numero_seance": 1,
+            "distance": 10,
+            "duree": 55,
+            "difficulte": 3,
+            "type": "A NE PAS RATER",
+            "description": "Une dernière séance d'allure 10km pour garder cette habitude de ce qu'est le rythme plus rapide que votre intensité de course. Les blocs de 6′ vont vous challenger c'est sûr mais vous en êtes capable !",
+            "etapes": [
+              {
+                "duree": "20",
+                "allure": "6:45",
+                "type": "Echauffement"
+              },
+              {
+                "duree": "6",
+                "allure": "5:30",
+                "type": "Seuil",
+                "nombre_repetitions": 5,
+                "recuperation": {
+                  "duree": "1min30",
+                  "allure": "6:45",
+                  "type": "Récupération"
+                }
+              },
+              {
+                "duree": "5",
+                "allure": "6:45",
+                "type": "Retour au calme"
+              }
+            ]
+          },
+          {
+            "id": 20,
+            "titre": "Endurance fondamentale",
+            "emoji": "🏃🏻",
+            "numero_seance": 2,
+            "distance": 6.5,
+            "duree": 45,
+            "difficulte": 1,
+            "type": "A NE PAS RATER",
+            "description": "Cette sortie devrait commencer à devenir vraiment facile à ce stade. Les jambes sont peut-être lourdes du fractionné, mais le corps devient de plus en plus capable de faire avec !",
+            "etapes": [
+              {
+                "duree": "45",
+                "allure": "6:45",
+                "type": "Endurance Fondamentale"
+              }
+            ]
+          },
+          {
+            "id": 21,
+            "titre": "Sortie longue",
+            "emoji": "🌟",
+            "numero_seance": 3,
+            "distance": 11,
+            "duree": 65,
+            "difficulte": 2,
+            "type": "A NE PAS RATER",
+            "description": "Dernière sortie longue du bloc, la fatigue des dernières semaines peut se ressentir mais ne vous inquiétez pas pour autant. Courir avec cette fatigue vous permettra d'être plus efficace sur la fin de votre semi-marathon",
+            "etapes": [
+              {
+                "duree": "50",
+                "allure": "6:45",
+                "type": "Endurance Fondamentale"
+              },
+              {
+                "duree": "7",
+                "allure": "5:45",
+                "type": "Allure Semi",
+                "nombre_repetitions": 4,
+                "recuperation": {
+                  "duree": "2",
+                  "allure": "6:45",
+                  "type": "Récupération"
+                }
+              },
+              {
+                "duree": "15",
+                "allure": "6:45",
+                "type": "Retour au calme"
+              }
+            ]
+          }
+        ]
+      },
+      "8": {
+        "seances": [
+          {
+            "id": 22,
+            "titre": "Seuil 60",
+            "emoji": "⚡",
+            "numero_seance": 1,
+            "distance": 6,
+            "duree": 35,
+            "difficulte": 2,
+            "type": "A NE PAS RATER",
+            "description": "Même type de fractionné que pendant la première semaine de récup, facile ! On fait tourner les jambes sans forcer sur la machine, on en profite pour courir relâché !",
+            "etapes": [
+              {
+                "duree": "15",
+                "allure": "6:45",
+                "type": "Echauffement"
+              },
+              {
+                "duree": "2",
+                "allure": "5:30",
+                "type": "Seuil",
+                "nombre_repetitions": 5,
+                "recuperation": {
+                  "duree": "1",
+                  "allure": "6:45",
+                  "type": "Récupération"
+                }
+              },
+              {
+                "duree": "10",
+                "allure": "6:45",
+                "type": "Retour au calme"
+              }
+            ]
+          },
+          {
+            "id": 23,
+            "titre": "Endurance fondamentale",
+            "emoji": "🏃🏻",
+            "numero_seance": 2,
+            "distance": 6,
+            "duree": 40,
+            "difficulte": 1,
+            "type": "A NE PAS RATER",
+            "description": "On fait tourner les jambes, sans jamais forcer, l'objectif est clair cette semaine : récupérer avant d'attaquer la semaine critique du plan !",
+            "etapes": [
+              {
+                "duree": "40",
+                "allure": "6:45",
+                "type": "Endurance Fondamentale"
+              }
+            ]
+          },
+          {
+            "id": 24,
+            "titre": "Sortie longue",
+            "emoji": "🌟",
+            "numero_seance": 3,
+            "distance": 9.5,
+            "duree": 65,
+            "difficulte": 2,
+            "type": "A NE PAS RATER",
+            "description": "Sortie longue de recup ! Ces 1h05 devraient être une formalité… ça devrait en tous cas après 6 jours de récup ! Sinon attention à analyser le pourquoi de cette fatigue !",
+            "etapes": [
+              {
+                "duree": "65",
+                "allure": "6:45",
+                "type": "Endurance Fondamentale"
+              }
+            ]
+          }
+        ]
+      },
+      "9": {
+        "seances": [
+          {
+            "id": 25,
+            "titre": "Allure Semi",
+            "emoji": "⚡",
+            "numero_seance": 1,
+            "distance": 11,
+            "duree": 60,
+            "difficulte": 3,
+            "type": "A NE PAS RATER",
+            "description": "Grosse semaine qui démarre avec un gros fractionné ! 30' d'allure semi-marathon au total, rien d'insurmontable mais la dernière fraction devrait quand même bien vous challenger !",
+            "etapes": [
+              {
+                "duree": "20",
+                "allure": "6:45",
+                "type": "Echauffement"
+              },
+              {
+                "duree": "10",
+                "allure": "5:45",
+                "type": "Allure Semi",
+                "nombre_repetitions": 3,
+                "recuperation": {
+                  "duree": "2",
+                  "allure": "6:45",
+                  "type": "Récupération"
+                }
+              },
+              {
+                "duree": "10",
+                "allure": "6:45",
+                "type": "Retour au calme"
+              }
+            ]
+          },
+          {
+            "id": 26,
+            "titre": "Endurance fondamentale",
+            "emoji": "🏃🏻",
+            "numero_seance": 2,
+            "distance": 6.5,
+            "duree": 45,
+            "difficulte": 1,
+            "type": "A NE PAS RATER",
+            "description": "Footing en endurance fondamentale",
+            "etapes": [
+              {
+                "duree": "45",
+                "allure": "6:45",
+                "type": "Endurance Fondamentale"
+              }
+            ]
+          },
+          {
+            "id": 27,
+            "titre": "Sortie longue",
+            "emoji": "🌟",
+            "numero_seance": 3,
+            "distance": 14,
+            "duree": 80,
+            "difficulte": 4,
+            "type": "A NE PAS RATER",
+            "description": "EF pendant 1h20, sans forcer avant le bouquet final : 15' progressif à adapter à votre niveau de fatigue ! Fatigué ça peut être 10' Allure 42k, 3' Allure 21k et 2' Allure 10k… En forme vous pouvez vous challenger avec un 5' / 5' / 5' !",
+            "etapes": [
+              {
+                "duree": "80",
+                "allure": "6:45",
+                "type": "Endurance Fondamentale"
+              },
+              {
+                "duree": "5",
+                "allure": "6:15",
+                "type": "Allure Marathon",
+                "nombre_repetitions": 3,
+                "recuperation": {
+                  "duree": "2",
+                  "allure": "6:45",
+                  "type": "Récupération"
+                }
+              },
+              {
+                "duree": "5",
+                "allure": "5:45",
+                "type": "Allure Semi",
+                "nombre_repetitions": 3,
+                "recuperation": {
+                  "duree": "2",
+                  "allure": "6:45",
+                  "type": "Récupération"
+                }
+              },
+              {
+                "duree": "5",
+                "allure": "5:30",
+                "type": "Allure 10k",
+                "nombre_repetitions": 3,
+                "recuperation": {
+                  "duree": "2",
+                  "allure": "6:45",
+                  "type": "Récupération"
+                }
+              },
+              {
+                "duree": "5",
+                "allure": "6:45",
+                "type": "Retour au calme"
+              }
+            ]
+          }
+        ]
+      },
+      "10": {
+        "seances": [
+          {
+            "id": 28,
+            "titre": "Allure Semi",
+            "emoji": "⚡",
+            "numero_seance": 1,
+            "distance": 9,
+            "duree": 68,
+            "difficulte": 4,
+            "type": "A NE PAS RATER",
+            "description": "Séance test ! Si vous voulez faire un dernier ajustement de l'allure à la hausse ou à la baisse, c'est là qu'il faut le tester. La fin de séance va être un peu difficile oui, mais avec la fatigue des semaines passées… c'est normal ! Si vous tenez, c'est ok. Si vous lâchez… peut-être qu'il faut revoir un peu vos ambitions…",
+            "etapes": [
+              {
+                "duree": "20",
+                "allure": "6:45",
+                "type": "Echauffement"
+              },
+              {
+                "duree": "20",
+                "allure": "5:45",
+                "type": "Allure Semi",
+                "nombre_repetitions": 2,
+                "recuperation": {
+                  "duree": "3",
+                  "allure": "6:45",
+                  "type": "Récupération"
+                }
+              },
+              {
+                "duree": "5",
+                "allure": "6:45",
+                "type": "Retour au calme"
+              }
+            ]
+          },
+          {
+            "id": 29,
+            "titre": "Endurance fondamentale",
+            "emoji": "🏃🏻",
+            "numero_seance": 2,
+            "distance": 6,
+            "duree": 40,
+            "difficulte": 1,
+            "type": "A NE PAS RATER",
+            "description": "Footing en endurance fondamentale",
+            "etapes": [
+              {
+                "duree": "40",
+                "allure": "6:45",
+                "type": "Endurance Fondamentale"
+              }
+            ]
+          },
+          {
+            "id": 30,
+            "titre": "Sortie longue",
+            "emoji": "🌟",
+            "numero_seance": 3,
+            "distance": 10.5,
+            "duree": 60,
+            "difficulte": 2,
+            "type": "A NE PAS RATER",
+            "description": "Une sortie longue qui n'en a plus que le nom, 1h ça doit vous paraître court maintenant ! Un rappel d'allure semi qui doit vous sembler vraiment facile en comparaison aux 5' de la 5ème semaine du plan !",
+            "etapes": [
+              {
+                "duree": "30",
+                "allure": "6:45",
+                "type": "Echauffement"
+              },
+              {
+                "duree": "5",
+                "allure": "5:45",
+                "type": "Allure Semi",
+                "nombre_repetitions": 3,
+                "recuperation": {
+                  "duree": "5",
+                  "allure": "6:45",
+                  "type": "Récupération"
+                }
+              },
+              {
+                "duree": "5",
+                "allure": "6:45",
+                "type": "Retour au calme"
+              }
+            ]
+          }
+        ]
+      },
+      "11": {
+        "seances": [
+          {
+            "id": 31,
+            "titre": "Endurance fondamentale + Ligne droite",
+            "emoji": "⚡",
+            "numero_seance": 1,
+            "distance": 4,
+            "duree": 25,
+            "difficulte": 2,
+            "type": "A NE PAS RATER",
+            "description": "Cette semaine, on bouge juste un peu pour garder notre corps habitué au rythme de la course. Ce 30' doit être couru très relax et les 100m progressifs, sans forcer, juste pour se dégourdir les jambes !",
+            "etapes": [
+              {
+                "duree": "25",
+                "allure": "6:45",
+                "type": "Endurance Fondamentale"
+              },
+              {
+                "duree": "100m",
+                "allure": "progressif",
+                "type": "Ligne Droite",
+                "nombre_repetitions": 6
+              }
+            ]
+          },
+          {
+            "id": 32,
+            "titre": "Endurance fondamentale + Allure Semi",
+            "emoji": "⚡",
+            "numero_seance": 2,
+            "distance": 4,
+            "duree": 25,
+            "difficulte": 2,
+            "type": "A NE PAS RATER",
+            "description": "Un dernier rappel d'allure semi-marathon pour vous aider à mémoriser le rythme de course",
+            "etapes": [
+              {
+                "duree": "15",
+                "allure": "6:45",
+                "type": "Echauffement"
+              },
+              {
+                "duree": "2",
+                "allure": "5:45",
+                "type": "Allure Semi",
+                "nombre_repetitions": 3,
+                "recuperation": {
+                  "duree": "2",
+                  "allure": "6:45",
+                  "type": "Récupération"
+                }
+              },
+              {
+                "duree": "5",
+                "allure": "6:45",
+                "type": "Retour au calme"
+              }
+            ]
+          },
+          {
+            "id": 33,
+            "titre": "Semi-marathon",
+            "emoji": "🏅",
+            "numero_seance": 3,
+            "distance": 21.1,
+            "duree": 120,
+            "difficulte": 5,
+            "is_seance_epreuve": true,
+            "type": "A NE PAS RATER",
+            "description": "Semi marathon",
+            "etapes": [
+              {
+                "duree": "120",
+                "allure": "5:45",
+                "type": "Allure Semi"
+              }
+            ]
+          }
+        ]
+      },
+      "12": {
+        "seances": [
+          {
+            "id": 34,
+            "titre": "Récupération",
+            "emoji": "🌟",
+            "numero_seance": 1,
+            "distance": 4,
+            "duree": 30,
+            "difficulte": 1,
+            "description": "Séance de récupération post semi-marathon. Courez très relax, l'objectif est juste de faire circuler le sang dans les jambes pour favoriser la récupération.",
+            "etapes": [
+              {
+                "duree": "30",
+                "allure": "6:45",
+                "type": "Endurance Fondamentale"
+              }
+            ]
+          },
+          {
+            "id": 35,
+            "titre": "Récupération",
+            "emoji": "🌟",
+            "numero_seance": 2,
+            "distance": 4,
+            "duree": 30,
+            "difficulte": 1,
+            "description": "Deuxième séance de récupération. Même consigne que la première : on court relax !",
+            "etapes": [
+              {
+                "duree": "30",
+                "allure": "6:45",
+                "type": "Endurance Fondamentale"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
