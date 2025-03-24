@@ -6,23 +6,7 @@
             "use": "@vercel/node"
         },
         {
-            "src": "training-programs.json",
-            "use": "@vercel/static"
-        },
-        {
-            "src": "*.html",
-            "use": "@vercel/static"
-        },
-        {
-            "src": "*.json",
-            "use": "@vercel/static"
-        },
-        {
-            "src": "*.svg",
-            "use": "@vercel/static"
-        },
-        {
-            "src": "*.png",
+            "src": "public/**",
             "use": "@vercel/static"
         }
     ],
@@ -30,6 +14,10 @@
         {
             "src": "/api/(.*)",
             "dest": "/server.js"
+        },
+        {
+            "src": "/(.+\\.[a-z]+)$",
+            "dest": "/public/$1"
         },
         {
             "src": "/(.*)",

@@ -5,6 +5,7 @@ const app = express();
 const port = 3000;
 
 // Middleware pour servir les fichiers statiques
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname)));
 app.use(express.json());
 
