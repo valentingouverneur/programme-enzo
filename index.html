@@ -5,13 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programme de course</title>
     <link rel="icon" href="medal.svg" type="image/x-icon">
+    
+    <!-- Préchargement des ressources critiques -->
+    <link rel="preload" href="/medal.svg" as="image">
+    <link rel="preload" href="/ppenzo.png" as="image">
+    
+    <!-- Optimisation des polices Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap&text=abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,400&display=swap&text=abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789" rel="stylesheet">
+    
+    <!-- Chargement des styles et scripts -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    
     <style>
+        /* Styles critiques inline */
+        .fade-enter {
+            opacity: 0;
+        }
+        .fade-enter-active {
+            opacity: 1;
+            transition: opacity 0.3s ease-in;
+        }
         /* Hiérarchie visuelle améliorée */
         .titre-principal {
             font-size: 2.5rem;
@@ -39,20 +56,49 @@
             margin-bottom: 1.5rem;
         }
     </style>
+    
+    <script>
+        // Cache des données
+        window.programmeCache = new Map();
+        
+        // Fonction utilitaire pour le cache
+        window.getProgramme = async (numeroSemaine) => {
+            if (window.programmeCache.has(numeroSemaine)) {
+                return window.programmeCache.get(numeroSemaine);
+            }
+            
+            const response = await fetch('/api/programme-actuel?semaine=' + numeroSemaine);
+            const data = await response.json();
+            window.programmeCache.set(numeroSemaine, data);
+            return data;
+        };
+    </script>
 </head>
 <body class="static bg-gray-100 px-0 pt-4 sm:p-4" x-data="{ 
     programme: null,
     isLoading: true,
     async init() {
-        this.isLoading = true;
-        await this.chargerSemaine(1);
-        this.isLoading = false;
+        try {
+            const data = await window.getProgramme(1);
+            this.programme = data;
+        } catch (error) {
+            console.error('Erreur lors du chargement du programme:', error);
+        } finally {
+            this.isLoading = false;
+        }
     },
     async chargerSemaine(numeroSemaine) {
+        if (this.isLoading || numeroSemaine === this.programme?.semaine_actuelle) return;
+        
         this.isLoading = true;
-        const response = await fetch('/api/programme-actuel?semaine=' + numeroSemaine);
-        this.programme = await response.json();
-        this.isLoading = false;
+        try {
+            const data = await window.getProgramme(numeroSemaine);
+            this.programme = data;
+        } catch (error) {
+            console.error('Erreur lors du chargement de la semaine:', error);
+        } finally {
+            this.isLoading = false;
+        }
     },
     async chargerParDate(date) {
         const response = await fetch('/api/programme-actuel?date=' + date);
