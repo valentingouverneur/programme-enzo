@@ -42,12 +42,17 @@
 </head>
 <body class="static bg-gray-100 px-0 pt-4 sm:p-4" x-data="{ 
     programme: null,
+    isLoading: true,
     async init() {
+        this.isLoading = true;
         await this.chargerSemaine(1);
+        this.isLoading = false;
     },
     async chargerSemaine(numeroSemaine) {
+        this.isLoading = true;
         const response = await fetch('/api/programme-actuel?semaine=' + numeroSemaine);
         this.programme = await response.json();
+        this.isLoading = false;
     },
     async chargerParDate(date) {
         const response = await fetch('/api/programme-actuel?date=' + date);
@@ -121,20 +126,27 @@
 
     <!--Presentation-->
     <div class="relative p-6 sm:rounded-lg mt-6 max-w-full sm:max-w-[1072px] mx-auto mb-4 bg-blue-950 flex items-center justify-between overflow-hidden">
-        <div class="relative z-10 w-full">
-            <h2 class="titre-principal text-white" x-text="programme?.titre">Programme de 11 semaines pour préparer un semi-marathon</h2>
-            <p class="text-orange-500 text-sm sm:text-base font-semibold mb-4" x-text="programme?.description">Bloc 3 - Allure spécifique 10km</p>
-            <div class="flex gap-6">
-                <div>
-                    <p class="text-gray-400 text-sm">Distance totale</p>
-                    <p class="text-white font-semibold" x-text="calculerDistanceTotale() + ' km'">26 km</p>
-                </div>
-                <div>
-                    <p class="text-gray-400 text-sm">Durée totale</p>
-                    <p class="text-white font-semibold" x-text="calculerDureeTotale()">2h35min</p>
+        <template x-if="isLoading">
+            <div class="flex items-center justify-center w-full py-12">
+                <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-white"></div>
+            </div>
+        </template>
+        <template x-if="!isLoading && programme">
+            <div class="relative z-10 w-full">
+                <h2 class="titre-principal text-white" x-text="programme.titre"></h2>
+                <p class="text-orange-500 text-sm sm:text-base font-semibold mb-4" x-text="programme.description"></p>
+                <div class="flex gap-6">
+                    <div>
+                        <p class="text-gray-400 text-sm">Distance totale</p>
+                        <p class="text-white font-semibold" x-text="calculerDistanceTotale() + ' km'"></p>
+                    </div>
+                    <div>
+                        <p class="text-gray-400 text-sm">Durée totale</p>
+                        <p class="text-white font-semibold" x-text="calculerDureeTotale()"></p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </template>
         <img src="/medal.svg" alt="Icône" class="absolute right-4 top-[20%] h-20 z-0 hidden sm:block">
     </div>
 

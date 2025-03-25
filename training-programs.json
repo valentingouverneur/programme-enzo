@@ -154,7 +154,7 @@
             "distance": 6.5,
             "duree": 45,
             "difficulte": 1,
-            "type": "A NE PAS RATER",
+            "type": "NORMAL",
             "description": "Footing en endurance fondamentale. L'impression en fin de séance doit être celle d'être plus en forme qu'avant de l'avoir commencée. On ne doit pas se fatiguer sur cette séance, juste enchaîner les kilomètres sans stress !",
             "etapes": [
               {
@@ -246,7 +246,7 @@
             "distance": 6.5,
             "duree": 45,
             "difficulte": 1,
-            "type": "A NE PAS RATER",
+            "type": "NORMAL",
             "description": "L'endurance fondamentale, c'est aussi le meilleur moment pour travailler sa technique !",
             "etapes": [
               {
@@ -293,7 +293,7 @@
         ]
       },
       "4": {
-        "titre": "Bloc 1 : Seuil 30 - Semaine 4",
+        "titre": "Bloc 1 : Seuil 30 - Semaine 4 (Récupération)",
         "dateDebut": "2024-04-14",
         "seances": [
           {
@@ -304,7 +304,7 @@
             "distance": 7,
             "duree": 35,
             "difficulte": 2,
-            "type": "A NE PAS RATER",
+            "type": "NORMAL",
             "description": "La séance de fractionné de cette semaine est très facile (allure plus lente, fractions plus courtes et volume plus faible), ne cherchez pas à en faire plus c'est normal, c'est une semaine de récupération !",
             "etapes": [
               {
@@ -335,10 +335,10 @@
             "titre": "Endurance fondamentale",
             "emoji": "🏃🏻",
             "numero_seance": 2,
-            "distance": 4.5,
-            "duree": 30,
+            "distance": 6.5,
+            "duree": 45,
             "difficulte": 1,
-            "type": "A NE PAS RATER",
+            "type": "NORMAL",
             "description": "Début de la semaine d'assimilation / de récupération. Toutes les séances vont baisser en volume et en intensité. Pour commencer, un simple footing lent, relax pour vous reposer des trois premières semaines",
             "etapes": [
               {
@@ -356,7 +356,7 @@
             "distance": 9.5,
             "duree": 65,
             "difficulte": 2,
-            "type": "A NE PAS RATER",
+            "type": "NORMAL",
             "description": "Une sortie longue d'1h05 seulement, à nouveau pour privilégier la récupération. Peu de fatigue et des batteries qui seront bien rechargées pour attaquer la suite !",
             "etapes": [
               {
@@ -414,7 +414,7 @@
             "distance": 6.5,
             "duree": 45,
             "difficulte": 1,
-            "type": "A NE PAS RATER",
+            "type": "NORMAL",
             "description": "Le footing de recup, on garde son focus sur le fait de courir le plus relâché possible, sans jamais forcer !",
             "etapes": [
               {
@@ -506,7 +506,7 @@
             "distance": 6.5,
             "duree": 45,
             "difficulte": 1,
-            "type": "A NE PAS RATER",
+            "type": "NORMAL",
             "description": "Classique footing, toujours en endurance fondamentale, toujours en essayant de courir relâché, avec une bonne technique pour économiser son énergie… Ce sera la clé le jour du semi !",
             "etapes": [
               {
@@ -524,7 +524,7 @@
             "distance": 11,
             "duree": 65,
             "difficulte": 2,
-            "type": "A NE PAS RATER",
+            "type": "NORMAL",
             "description": "On continue les sorties longues incluant de l'allure semi-marathon dans la 2ème moitié de la sortie… pour que vous travailliez cette allure en condition de fatigue, comme lors de la fin de course le jour J !",
             "etapes": [
               {
@@ -598,7 +598,7 @@
             "distance": 6.5,
             "duree": 45,
             "difficulte": 1,
-            "type": "A NE PAS RATER",
+            "type": "NORMAL",
             "description": "Cette sortie devrait commencer à devenir vraiment facile à ce stade. Les jambes sont peut-être lourdes du fractionné, mais le corps devient de plus en plus capable de faire avec !",
             "etapes": [
               {
@@ -616,7 +616,7 @@
             "distance": 11,
             "duree": 65,
             "difficulte": 2,
-            "type": "A NE PAS RATER",
+            "type": "NORMAL",
             "description": "Dernière sortie longue du bloc, la fatigue des dernières semaines peut se ressentir mais ne vous inquiétez pas pour autant. Courir avec cette fatigue vous permettra d'être plus efficace sur la fin de votre semi-marathon",
             "etapes": [
               {
@@ -645,7 +645,7 @@
         ]
       },
       "8": {
-        "titre": "Bloc 2 : Seuil 60 - Semaine 8",
+        "titre": "Bloc 2 : Allure Semi - Semaine 8 (Récupération)",
         "dateDebut": "2024-05-12",
         "seances": [
           {
@@ -656,7 +656,7 @@
             "distance": 6,
             "duree": 35,
             "difficulte": 2,
-            "type": "A NE PAS RATER",
+            "type": "NORMAL",
             "description": "Même type de fractionné que pendant la première semaine de récup, facile ! On fait tourner les jambes sans forcer sur la machine, on en profite pour courir relâché !",
             "etapes": [
               {
@@ -687,10 +687,10 @@
             "titre": "Endurance fondamentale",
             "emoji": "🏃🏻",
             "numero_seance": 2,
-            "distance": 6,
-            "duree": 40,
+            "distance": 6.5,
+            "duree": 45,
             "difficulte": 1,
-            "type": "A NE PAS RATER",
+            "type": "NORMAL",
             "description": "On fait tourner les jambes, sans jamais forcer, l'objectif est clair cette semaine : récupérer avant d'attaquer la semaine critique du plan !",
             "etapes": [
               {
@@ -708,7 +708,7 @@
             "distance": 9.5,
             "duree": 65,
             "difficulte": 2,
-            "type": "A NE PAS RATER",
+            "type": "NORMAL",
             "description": "Sortie longue de recup ! Ces 1h05 devraient être une formalité… ça devrait en tous cas après 6 jours de récup ! Sinon attention à analyser le pourquoi de cette fatigue !",
             "etapes": [
               {
@@ -766,7 +766,7 @@
             "distance": 6.5,
             "duree": 45,
             "difficulte": 1,
-            "type": "A NE PAS RATER",
+            "type": "NORMAL",
             "description": "Footing en endurance fondamentale",
             "etapes": [
               {
@@ -880,7 +880,7 @@
             "distance": 6,
             "duree": 40,
             "difficulte": 1,
-            "type": "A NE PAS RATER",
+            "type": "NORMAL",
             "description": "Footing en endurance fondamentale",
             "etapes": [
               {
@@ -927,7 +927,7 @@
         ]
       },
       "11": {
-        "titre": "Bloc 3 : Allure Semi - Semaine 11",
+        "titre": "Bloc 3 : Affûtage - Semaine 11",
         "dateDebut": "2024-06-02",
         "seances": [
           {
@@ -938,7 +938,7 @@
             "distance": 4,
             "duree": 25,
             "difficulte": 2,
-            "type": "A NE PAS RATER",
+            "type": "NORMAL",
             "description": "Cette semaine, on bouge juste un peu pour garder notre corps habitué au rythme de la course. Ce 30' doit être couru très relax et les 100m progressifs, sans forcer, juste pour se dégourdir les jambes !",
             "etapes": [
               {
@@ -962,7 +962,7 @@
             "distance": 4,
             "duree": 25,
             "difficulte": 2,
-            "type": "A NE PAS RATER",
+            "type": "NORMAL",
             "description": "Un dernier rappel d'allure semi-marathon pour vous aider à mémoriser le rythme de course",
             "etapes": [
               {
@@ -997,7 +997,7 @@
             "duree": 120,
             "difficulte": 5,
             "is_seance_epreuve": true,
-            "type": "A NE PAS RATER",
+            "type": "NORMAL",
             "description": "Semi marathon",
             "etapes": [
               {
