@@ -49,6 +49,10 @@
         const response = await fetch('/api/programme-actuel?semaine=' + numeroSemaine);
         this.programme = await response.json();
     },
+    async chargerParDate(date) {
+        const response = await fetch('/api/programme-actuel?date=' + date);
+        this.programme = await response.json();
+    },
     async semainePrecedente() {
         if (this.programme.semaine_actuelle > 1) {
             await this.chargerSemaine(parseInt(this.programme.semaine_actuelle) - 1);
@@ -85,7 +89,9 @@
         <div class="flex items-center justify-between border-b border-gray-200 pb-4">
             <h1 class="text-2xl font-semibold text-gray-900">Entraînements</h1>
             <div class="flex items-center space-x-2">
-                <button @click="semainePrecedente()" class="p-2 rounded-full hover:bg-gray-100">
+                <button @click="semainePrecedente()" 
+                        :disabled="programme?.semaine_actuelle <= 1"
+                        class="p-2 rounded-full hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed">
                     <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
                     </svg>
@@ -93,7 +99,9 @@
                 <div class="bg-green-50 px-4 py-2 rounded-lg">
                     <span class="text-sm font-medium text-gray-900">SEMAINE <span x-text="programme?.semaine_actuelle"></span></span>
                 </div>
-                <button @click="semaineSuivante()" class="p-2 rounded-full hover:bg-gray-100">
+                <button @click="semaineSuivante()" 
+                        :disabled="programme?.semaine_actuelle >= programme?.duree_totale_semaines"
+                        class="p-2 rounded-full hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed">
                     <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                     </svg>

@@ -6,7 +6,7 @@
     "semaines": {
       "1": {
         "titre": "Bloc 1 : Seuil 30 - Semaine 1",
-        "dateDebut": "2024-03-24",
+        "dateDebut": "2025-03-24",
         "seances": [
           {
             "id": 1,
@@ -98,7 +98,7 @@
       },
       "2": {
         "titre": "Bloc 1 : Seuil 30 - Semaine 2",
-        "dateDebut": "2024-03-31",
+        "dateDebut": "2025-03-31",
         "seances": [
           {
             "id": 4,
@@ -190,7 +190,7 @@
       },
       "3": {
         "titre": "Bloc 1 : Seuil 30 - Semaine 3",
-        "dateDebut": "2024-04-07",
+        "dateDebut": "2025-04-07",
         "seances": [
           {
             "id": 7,
@@ -282,7 +282,7 @@
       },
       "4": {
         "titre": "Bloc 1 : Seuil 30 - Semaine 4",
-        "dateDebut": "2024-04-14",
+        "dateDebut": "2025-04-14",
         "seances": [
           {
             "id": 10,
@@ -358,7 +358,7 @@
       },
       "5": {
         "titre": "Bloc 2 : Seuil 60 - Semaine 5",
-        "dateDebut": "2024-04-21",
+        "dateDebut": "2025-04-21",
         "seances": [
           {
             "id": 13,
@@ -450,7 +450,7 @@
       },
       "6": {
         "titre": "Bloc 2 : Seuil 60 - Semaine 6",
-        "dateDebut": "2024-04-28",
+        "dateDebut": "2025-04-28",
         "seances": [
           {
             "id": 16,
@@ -542,7 +542,7 @@
       },
       "7": {
         "titre": "Bloc 2 : Seuil 60 - Semaine 7",
-        "dateDebut": "2024-05-05",
+        "dateDebut": "2025-05-05",
         "seances": [
           {
             "id": 19,
@@ -634,7 +634,7 @@
       },
       "8": {
         "titre": "Bloc 2 : Seuil 60 - Semaine 8",
-        "dateDebut": "2024-05-12",
+        "dateDebut": "2025-05-12",
         "seances": [
           {
             "id": 22,
@@ -710,7 +710,7 @@
       },
       "9": {
         "titre": "Bloc 3 : Allure Semi - Semaine 9",
-        "dateDebut": "2024-05-19",
+        "dateDebut": "2025-05-19",
         "seances": [
           {
             "id": 25,
@@ -824,7 +824,7 @@
       },
       "10": {
         "titre": "Bloc 3 : Allure Semi - Semaine 10",
-        "dateDebut": "2024-05-26",
+        "dateDebut": "2025-05-26",
         "seances": [
           {
             "id": 28,
@@ -916,7 +916,7 @@
       },
       "11": {
         "titre": "Bloc 3 : Allure Semi - Semaine 11",
-        "dateDebut": "2024-06-02",
+        "dateDebut": "2025-06-02",
         "seances": [
           {
             "id": 31,
@@ -999,7 +999,7 @@
       },
       "12": {
         "titre": "Semaine de récupération",
-        "dateDebut": "2024-06-09",
+        "dateDebut": "2025-06-09",
         "seances": [
           {
             "id": 34,

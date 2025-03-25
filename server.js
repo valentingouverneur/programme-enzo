@@ -40,25 +40,29 @@ function sauvegarderProgrammes(programmes) {
 }
 
 // Fonction pour obtenir la semaine actuelle basée sur la date
-function obtenirSemaineActuelle(semaines) {
-    const aujourdhui = new Date();
-    let semaineActuelle = "1"; // Par défaut, semaine 1
-    let dateDebutPlusProche = null;
-
-    // Parcourir toutes les semaines pour trouver la plus récente qui a commencé
+function obtenirSemaineActuelle(semaines, dateSimulation = null) {
+    const aujourdhui = dateSimulation ? new Date(dateSimulation) : new Date();
+    console.log('Date à vérifier:', aujourdhui.toISOString());
+    
+    // Parcourir toutes les semaines pour trouver celle qui contient la date
     for (const [numero, semaine] of Object.entries(semaines)) {
         if (!semaine.dateDebut) continue;
         
         const dateDebut = new Date(semaine.dateDebut);
-        if (dateDebut <= aujourdhui) {
-            if (!dateDebutPlusProche || dateDebut > dateDebutPlusProche) {
-                dateDebutPlusProche = dateDebut;
-                semaineActuelle = numero;
-            }
+        const dateFin = new Date(dateDebut);
+        dateFin.setDate(dateFin.getDate() + 6); // La semaine dure 7 jours
+        
+        console.log(`Semaine ${numero} - du ${dateDebut.toISOString()} au ${dateFin.toISOString()}`);
+        
+        if (aujourdhui >= dateDebut && aujourdhui <= dateFin) {
+            console.log(`→ Date trouvée dans la semaine ${numero}`);
+            return numero;
         }
     }
 
-    return semaineActuelle;
+    console.log('→ Aucune semaine trouvée, retour à la semaine 1');
+    // Si aucune semaine ne contient la date, retourner la première semaine
+    return "1";
 }
 
 // Fonction pour calculer les totaux à partir des étapes
@@ -96,10 +100,15 @@ app.get('/', (req, res) => {
 app.get('/api/programme-actuel', async (req, res) => {
     try {
         const programmes = lireProgrammes();
-        const semaineActuelle = req.query.semaine || obtenirSemaineActuelle(programmes.programme10km.semaines);
+        const dateSimulation = req.query.date;
+        console.log('Date demandée:', dateSimulation);
+        
+        const semaineActuelle = req.query.semaine || obtenirSemaineActuelle(programmes.programme10km.semaines, dateSimulation);
+        console.log('Semaine calculée:', semaineActuelle);
 
         // Vérifier si la semaine demandée existe
         if (!programmes.programme10km.semaines[semaineActuelle]) {
+            console.log('Semaine non trouvée:', semaineActuelle);
             return res.status(404).json({ error: 'Semaine non trouvée' });
         }
 
