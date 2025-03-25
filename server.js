@@ -42,10 +42,13 @@ function sauvegarderProgrammes(programmes) {
 // Fonction pour obtenir la semaine actuelle basée sur la date
 function obtenirSemaineActuelle(semaines) {
     const aujourdhui = new Date();
-    let semaineActuelle = null;
+    let semaineActuelle = "1"; // Par défaut, semaine 1
     let dateDebutPlusProche = null;
 
+    // Parcourir toutes les semaines pour trouver la plus récente qui a commencé
     for (const [numero, semaine] of Object.entries(semaines)) {
+        if (!semaine.dateDebut) continue;
+        
         const dateDebut = new Date(semaine.dateDebut);
         if (dateDebut <= aujourdhui) {
             if (!dateDebutPlusProche || dateDebut > dateDebutPlusProche) {
@@ -55,7 +58,7 @@ function obtenirSemaineActuelle(semaines) {
         }
     }
 
-    return semaineActuelle || Object.keys(semaines)[0];
+    return semaineActuelle;
 }
 
 // Fonction pour calculer les totaux à partir des étapes
@@ -93,13 +96,20 @@ app.get('/', (req, res) => {
 app.get('/api/programme-actuel', async (req, res) => {
     try {
         const programmes = lireProgrammes();
-        const semaineActuelle = "1"; // On force l'affichage de la semaine 1
+        const semaineActuelle = req.query.semaine || obtenirSemaineActuelle(programmes.programme10km.semaines);
+
+        // Vérifier si la semaine demandée existe
+        if (!programmes.programme10km.semaines[semaineActuelle]) {
+            return res.status(404).json({ error: 'Semaine non trouvée' });
+        }
 
         const response = {
             ...programmes.programme10km,
             semaine_actuelle: semaineActuelle,
             duree_totale_semaines: programmes.programme10km.duree_semaines,
-            seances: programmes.programme10km.semaines[semaineActuelle].seances
+            seances: programmes.programme10km.semaines[semaineActuelle].seances,
+            titre: programmes.programme10km.titre,
+            description: programmes.programme10km.description
         };
 
         res.json(response);
