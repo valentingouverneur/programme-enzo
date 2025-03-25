@@ -75,7 +75,7 @@
     </div>
 
     <!--Presentation-->
-    <div class="relative p-6 sm:rounded-lg mt-6 max-w-full sm:max-w-[1072px] mx-auto mb-8 bg-blue-950 flex items-center justify-between overflow-hidden">
+    <div class="relative p-6 sm:rounded-lg mt-6 max-w-full sm:max-w-[1072px] mx-auto mb-4 bg-blue-950 flex items-center justify-between overflow-hidden">
         <div class="relative z-10">
             <h2 class="titre-principal text-white" x-text="programme?.titre">Programme de 11 semaines pour préparer un semi-marathon</h2>
             <p class="text-orange-500 text-sm sm:text-base font-semibold mb-2" x-text="programme?.description">Bloc 3 - Allure spécifique 10km</p>
@@ -85,33 +85,34 @@
     </div>
 
     <!--Navigation Semaines-->
-    <div class="max-w-full sm:max-w-[1072px] mx-auto mb-8">
-        <div class="flex items-center justify-between border-b border-gray-200 pb-4">
-            <h1 class="text-2xl font-semibold text-gray-900">Entraînements</h1>
-            <div class="flex items-center space-x-2">
-                <button @click="semainePrecedente()" 
-                        :disabled="programme?.semaine_actuelle <= 1"
-                        class="p-2 rounded-full hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed">
-                    <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                    </svg>
-                </button>
-                <div class="bg-green-50 px-4 py-2 rounded-lg">
-                    <span class="text-sm font-medium text-gray-900">SEMAINE <span x-text="programme?.semaine_actuelle"></span></span>
+    <div class="max-w-full sm:max-w-[1072px] mx-auto">
+        <div class="flex justify-end">
+            <div class="w-full sm:w-auto">
+                <div class="flex items-center justify-between bg-gray-50 rounded-lg border-2 border-grey-600 overflow-hidden">
+                    <button @click="semainePrecedente()" 
+                            :disabled="programme?.semaine_actuelle <= 1"
+                            class="px-4 py-2 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed">
+                        <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </button>
+                    <div class="px-8 py-2 bg-white">
+                        <span class="text-sm font-medium text-gray-500">Semaine <span x-text="programme?.semaine_actuelle"></span></span>
+                    </div>
+                    <button @click="semaineSuivante()" 
+                            :disabled="programme?.semaine_actuelle >= programme?.duree_totale_semaines"
+                            class="px-4 py-2 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed">
+                        <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
                 </div>
-                <button @click="semaineSuivante()" 
-                        :disabled="programme?.semaine_actuelle >= programme?.duree_totale_semaines"
-                        class="p-2 rounded-full hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed">
-                    <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                    </svg>
-                </button>
             </div>
         </div>
     </div>
 
     <!--Programme-->
-    <div class="max-w-full sm:max-w-[1072px] mx-auto">
+    <div class="max-w-full sm:max-w-[1072px] mx-auto mt-4">
         <!-- Boucle sur les séances -->
         <template x-for="seance in programme?.seances" :key="seance.id">
             <div class="bg-white p-6 mb-2 sm:mb-6 rounded-lg border-2 border-grey-600 espacement-seance" x-data="{ open: false }">
